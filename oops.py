@@ -1,7 +1,8 @@
 print('hello')
 
 
-class Students():
+class Students:
+    company_name='Flash electronics'
     def __init__(self, name, roll, marks):
         self.name = name
         self.roll = roll
@@ -13,7 +14,7 @@ class Students():
 
 s1 = Students('chetan',3,56)
 s1.display()
-
+print(Students.company_name)
 
 s2 = Students('nilu',34,99)
 s2.display()
