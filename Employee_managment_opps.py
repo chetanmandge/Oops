@@ -15,6 +15,7 @@ class employee_managment():
         e2 = employee_managment(u_name, u_id, u_dept)
         dB.append(e2)
         print(f"Employee {u_name} added successfully")
+
     def display_employee(self):
         for i in range(len(dB)):
             print("Employee name is :-", dB[i].name)
@@ -26,7 +27,15 @@ class employee_managment():
         for i in range(len(dB)):
             if dB[i].name == nam:
                 print("found employee in Database")
+                return True
+            else:
+                print("employee not found in dB")
+                return False
 
+    def update_employee(self):
+        u_name = input("Enter updated employee Name :-")
+        u_id = input('Enter  updated employee ID :-')
+        u_dept = input("Enter updated employee department :-")
 
 e1 = employee_managment("chetan", 201, 'etc')
 dB.append(e1)
@@ -46,11 +55,14 @@ while 1:
     if ch == 1:
         obj.Add_employe()
     elif ch == 2:
+        result= obj.search_employee()
+        if(result== True):
+            obj.update_employee()
 
-        pass
     elif ch == 3:
         obj.display_employee()
     elif ch == 4:
+
         pass
     elif ch == 5:
         obj.search_employee()
